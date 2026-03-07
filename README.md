@@ -61,7 +61,6 @@ Visualizations used:
 The following models were trained and evaluated:
 
 - Logistic Regression
-- Decision Tree
 - Random Forest
 - XGBoost (optional)
 
