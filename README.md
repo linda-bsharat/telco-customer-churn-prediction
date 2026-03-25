@@ -1,80 +1,124 @@
-# 📊 Telco Customer Churn Prediction
-Machine learning project to predict telecom customer churn using classification models.
+# 📡 Telco Customer Churn Prediction
 
-This project aims to predict customer churn using Machine Learning techniques.  
-The goal is to identify customers who are likely to leave the service so that companies can take proactive actions to retain them.
+> Predicting which telecom customers are likely to leave — before they do.
 
----
-
-# 🚀 Project Overview
-
-Customer churn prediction is an important problem in many industries such as telecommunications, banking, and subscription-based services.
-
-In this project we:
-- Performed **data cleaning and preprocessing**
-- Conducted **exploratory data analysis (EDA)**
-- Built **machine learning models**
-- Evaluated model performance using classification metrics
+![Python](https://img.shields.io/badge/Python-3.10-blue?style=flat-square&logo=python)
+![Streamlit](https://img.shields.io/badge/Streamlit-App-red?style=flat-square&logo=streamlit)
+![Sklearn](https://img.shields.io/badge/Scikit--Learn-ML-orange?style=flat-square&logo=scikit-learn)
+![Status](https://img.shields.io/badge/Status-Completed-brightgreen?style=flat-square)
 
 ---
 
-# 📊 Dataset
+## 🎯 Problem Statement
 
-The dataset contains customer information such as:
+Customer churn is one of the biggest challenges facing telecom companies.
+Losing a customer costs far more than retaining one.
 
-- Customer demographics
-- Account information
-- Services used
-- Monthly charges
-- Contract type
-- Churn label (target variable)
+This project builds a machine learning pipeline to **identify at-risk customers early**,
+enabling the business to take proactive retention actions before churn occurs.
 
-Target variable:
-
-**Churn**
-- Yes → customer left
-- No → customer stayed
+**Who benefits?** Telecom retention teams, customer success managers, and business analysts.
 
 ---
 
-# 🔍 Exploratory Data Analysis (EDA)
-
-During EDA we analyzed:
-
-- Customer distribution
-- Churn vs non-churn
-- Correlation between features
-- Feature importance
-- Data imbalance
-
-Visualizations used:
-
-- Count plots
-- Correlation heatmap
-- Distribution plots
-- Confusion matrix
+## 📁 Project Structure
+```
+telco-customer-churn-prediction/
+│
+├── 📂 data/                  # Raw and cleaned datasets
+├── 📂 documents/             # Project report and presentation
+├── 📂 figures/               # Key visualizations
+├── 📂 notebooks/             # Jupyter notebooks (cleaning, EDA, modeling)
+├── 📂 src/                   # Streamlit demo app
+├── .gitignore
+├── LICENSE
+└── README.md
+```
 
 ---
 
-# 🤖 Machine Learning Models
+## 📊 Dataset
 
-The following models were trained and evaluated:
+| Property | Value |
+|----------|-------|
+| Source | Telco Customer Churn (academic) |
+| Records | ~67,987 customers |
+| Features | 24 (after feature engineering) |
+| Target | `Churn` (1 = churned, 0 = retained) |
 
-- Logistic Regression
-- Random Forest
-- XGBoost (optional)
+**Key features:** tenure, contract type, internet service, monthly charges, payment method
 
 ---
 
-# 📈 Model Evaluation
+## 🔬 Project Workflow
 
-Models were evaluated using:
+### 1 — Data Cleaning
+- Handled missing values across 21 columns
+- Standardized inconsistent labels (gender, contract, payment method)
+- Converted all categorical features to numeric format
 
-- Accuracy
-- Precision
-- Recall
-- F1 Score
-- Confusion Matrix
+### 2 — Feature Engineering
+- `IsNewCustomer` — tenure ≤ 6 months
+- `IsLongTermCustomer` — tenure ≥ 48 months
+- `AvgMonthlyCharge` — TotalCharges / (tenure + 1)
+- `TotalServices` — count of subscribed services
 
+### 3 — Exploratory Data Analysis
+- Churn rate by contract type, internet service, and tenure
+- Feature correlation heatmap
+- Distribution analysis for key variables
 
+### 4 — Modeling & Evaluation
 
+| Model | Accuracy | F1 Score | Recall |
+|-------|----------|----------|--------|
+| Logistic Regression ✅ | 77.0% | 0.787 | 89.6% |
+| Random Forest | 76.4% | 0.776 | 86.8% |
+| Neural Network | 76.8% | 0.784 | 89.5% |
+
+> ✅ **Final model: Logistic Regression** — best balance of recall and interpretability.
+
+---
+
+## 💡 Key Findings
+
+- 📋 **Contract type** is the strongest churn predictor — month-to-month customers churn at 3x the rate of two-year contract customers
+- ⏱️ **New customers** (≤ 6 months tenure) are at the highest risk
+- 🌐 **Fiber Optic** subscribers show slightly higher churn than DSL users
+- 💳 **Electronic check** payment correlates with higher churn rates
+
+---
+
+## 🖥️ Streamlit Demo
+
+An interactive dashboard was built to explore the data and predict churn for individual customers.
+
+**To run locally:**
+```bash
+pip install streamlit pandas numpy matplotlib seaborn scikit-learn
+streamlit run src/app.py
+```
+
+**Features:**
+- 🏠 Overview dashboard with KPIs
+- 📊 Data explorer with interactive charts
+- 🤖 Model performance comparison
+- 🔮 Live churn prediction for any customer
+
+---
+
+## 👥 Team
+
+| Name | Role |
+|------|------|
+| Linda Bsharat | EDA & Visualization Lead |
+| Ahmad Hlawa | Data Lead |
+| — | Modeling Lead |
+| — | Documentation Lead |
+
+---
+
+## 🏫 About
+
+**IBT × GGateway Data Science & Machine Learning Bootcamp**
+Capstone Project — 2025
