@@ -107,18 +107,3 @@ streamlit run src/app.py
 
 ---
 
-## 👥 Team
-
-| Name | Role |
-|------|------|
-| Linda Bsharat | EDA & Visualization Lead |
-| Ahmad Hlawa | Data Lead |
-| — | Modeling Lead |
-| — | Documentation Lead |
-
----
-
-## 🏫 About
-
-**IBT × GGateway Data Science & Machine Learning Bootcamp**
-Capstone Project — 2025
