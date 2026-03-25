@@ -126,6 +126,58 @@ div[data-testid="metric-container"] [data-testid="stMetricDelta"] { color: #4caf
     padding: 20px 24px;
     margin-bottom: 18px;
 }
+
+/* ── Team member cards ── */
+.team-card {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #1a2840;
+    background: linear-gradient(135deg, #0d1828 0%, #0f1e30 100%);
+    margin-bottom: 7px;
+    transition: all 0.25s ease;
+    text-decoration: none !important;
+}
+.team-card:hover {
+    border-color: #3a6ea8;
+    background: linear-gradient(135deg, #111e30 0%, #142540 100%);
+    box-shadow: 0 0 14px rgba(126,200,227,0.12);
+    transform: translateX(3px);
+}
+.team-avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1a3a6a, #1e4d8c);
+    border: 1px solid #2a5490;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.72rem;
+    color: #7ec8e3 !important;
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    flex-shrink: 0;
+    letter-spacing: 0.02em;
+}
+.team-name {
+    font-size: 0.8rem;
+    color: #a8c4e0 !important;
+    font-weight: 500;
+    line-height: 1.2;
+    flex: 1;
+}
+.team-gh-icon {
+    opacity: 0.4;
+    transition: opacity 0.2s;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+.team-gh-icon svg { width: 16px; height: 16px; fill: #7ec8e3; }
+.team-card:hover .team-gh-icon { opacity: 1; }
  
 /* ── Divider ── */
 hr { border-color: #1e2d4a; }
@@ -211,6 +263,32 @@ def train_models(df):
     return models, metrics, X_train.columns.tolist(), X_test, y_test
  
 # ──────────────────────────────────────────────
+# TEAM MEMBERS
+# ──────────────────────────────────────────────
+TEAM = [
+    ("Linda Bsharat",      "LB", "https://github.com/linda-bsharat"),
+    ("Ahmad Abu Alhlawa",  "AA", "https://github.com/ahmadhlawa"),
+    ("Ruba Halabi",        "RH", "https://github.com/ruba-halabi"),
+    ("Ibrahim Kilani",     "IK", "https://github.com/ibrahim-kilani"),
+    ("Naser Abdalsalam",   "NA", "https://github.com/Naserjad"),
+]
+
+def render_team_sidebar():
+    st.markdown(
+        "<p style='font-size:0.7rem;color:#3a5a7a;letter-spacing:0.08em;margin-bottom:10px;'>THE TEAM</p>",
+        unsafe_allow_html=True
+    )
+    cards_html = ""
+    for name, initials, gh_url in TEAM:
+        cards_html += f"""
+        <a href="{gh_url}" target="_blank" class="team-card">
+            <div class="team-avatar">{initials}</div>
+            <span class="team-name">{name}</span>
+            <span class="team-gh-icon">🔗</span>
+        </a>"""
+    st.markdown(cards_html, unsafe_allow_html=True)
+
+# ──────────────────────────────────────────────
 # SIDEBAR
 # ──────────────────────────────────────────────
 with st.sidebar:
@@ -233,6 +311,11 @@ with st.sidebar:
     st.markdown("<hr>", unsafe_allow_html=True)
     st.markdown("<p style='font-size:0.7rem;color:#3a5a7a;letter-spacing:0.08em;'>MODELS</p>", unsafe_allow_html=True)
     st.markdown("<p style='font-size:0.82rem;color:#5a80a8;'>Logistic Regression<br>Random Forest</p>", unsafe_allow_html=True)
+    st.markdown("<hr>", unsafe_allow_html=True)
+
+    # ── Team Section ──
+    render_team_sidebar()
+
     st.markdown("<br><p style='font-size:0.68rem;color:#2a4060;text-align:center;'>IBT × GGateway Bootcamp · 2026</p>", unsafe_allow_html=True)
  
 # ──────────────────────────────────────────────
