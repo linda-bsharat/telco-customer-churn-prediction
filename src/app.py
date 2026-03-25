@@ -233,7 +233,7 @@ with st.sidebar:
     st.markdown("<hr>", unsafe_allow_html=True)
     st.markdown("<p style='font-size:0.7rem;color:#3a5a7a;letter-spacing:0.08em;'>MODELS</p>", unsafe_allow_html=True)
     st.markdown("<p style='font-size:0.82rem;color:#5a80a8;'>Logistic Regression<br>Random Forest</p>", unsafe_allow_html=True)
-    st.markdown("<br><p style='font-size:0.68rem;color:#2a4060;text-align:center;'>IBT × GGateway Bootcamp · 2025</p>", unsafe_allow_html=True)
+    st.markdown("<br><p style='font-size:0.68rem;color:#2a4060;text-align:center;'>IBT × GGateway Bootcamp · 2026</p>", unsafe_allow_html=True)
  
 # ──────────────────────────────────────────────
 # LOAD DATA & TRAIN
