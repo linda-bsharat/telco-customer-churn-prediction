@@ -3,10 +3,17 @@
 > Predicting which telecom customers are likely to leave — before they do.
 
 ![Python](https://img.shields.io/badge/Python-3.10-blue?style=flat-square&logo=python)
-![Streamlit](https://img.shields.io/badge/Streamlit-App-red?style=flat-square&logo=streamlit)
+![Streamlit](https://img.shields.io/badge/Streamlit-Deployed-red?style=flat-square&logo=streamlit)
 ![Sklearn](https://img.shields.io/badge/Scikit--Learn-ML-orange?style=flat-square&logo=scikit-learn)
 ![TensorFlow](https://img.shields.io/badge/TensorFlow-Neural%20Network-FF6F00?style=flat-square&logo=tensorflow)
+![PowerBI](https://img.shields.io/badge/Power%20BI-Dashboard-F2C811?style=flat-square&logo=powerbi)
 ![Status](https://img.shields.io/badge/Status-Completed-brightgreen?style=flat-square)
+
+---
+
+## 🌐 Live Demo
+
+**▶️ [Launch Streamlit App](https://telco-customer-churn-prediction-ibtggateway.streamlit.app/)**
 
 ---
 
@@ -26,11 +33,11 @@ enabling the business to take proactive retention actions before churn occurs.
 ```
 telco-customer-churn-prediction/
 │
-├── 📂 data/          # Raw and cleaned datasets
-├── 📂 documents/     # Project report and final presentation
-├── 📂 figures/       # Key visualizations and charts
-├── 📂 notebooks/     # Jupyter notebooks (cleaning, EDA, modeling)
-├── 📂 src/           # Streamlit interactive demo app
+├── 📂 data/                  # Raw and cleaned datasets
+├── 📂 figures/               # Key visualizations and charts
+├── 📂 notebooks/             # Jupyter notebooks (cleaning, EDA, modeling)
+├── 📂 slides/                # Final presentation deck
+├── 📂 src/                   # Streamlit interactive demo app
 ├── .gitignore
 ├── LICENSE
 └── README.md
@@ -58,6 +65,7 @@ telco-customer-churn-prediction/
 - Standardized inconsistent labels (gender, contract, payment method)
 - Fixed logical inconsistencies in service columns
 - Converted all features to numeric format
+- Clipped outliers using IQR method
 
 ### 02 — Feature Engineering
 | Feature | Description |
@@ -101,6 +109,8 @@ telco-customer-churn-prediction/
 
 ## 🖥️ Streamlit Demo
 
+**▶️ Live at: [telco-customer-churn-prediction-ibtggateway.streamlit.app](https://telco-customer-churn-prediction-ibtggateway.streamlit.app/)**
+
 An interactive dashboard to explore the data and predict churn for any customer.
 
 **To run locally:**
@@ -109,13 +119,20 @@ pip install streamlit pandas numpy matplotlib seaborn scikit-learn
 streamlit run src/app.py
 ```
 
-**Dashboard pages:**
 | Page | Description |
 |------|-------------|
 | 🏠 Overview | KPI cards, churn distribution, key findings |
 | 📊 Data Explorer | Interactive charts and feature analysis |
 | 🤖 Model Performance | Metrics, confusion matrix, ROC curves |
 | 🔮 Predict Customer | Live churn prediction with risk factor breakdown |
+
+---
+
+## 📊 Power BI Dashboard
+
+An executive-level Power BI dashboard was built to complement the ML pipeline,
+providing business-friendly visualizations of churn trends, customer segments,
+and key risk indicators for non-technical stakeholders.
 
 ---
 
@@ -132,11 +149,12 @@ streamlit run src/app.py
 
 ## 👥 Team
 
+| Name | Role |
+|------|------|
+| Linda Bsharat |
+| Ahmad Hlawa |
+| Naser abdalsalam|
+| Ibrahim Kilani |
+| Ruba Halabi |
 
 
- Linda Bsharat 
- Ahmad Abu Alhlawa
- Naser abdalsalam
- Ibrahim Kilani
- Ruba Halabi
- 
