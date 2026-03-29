@@ -149,8 +149,8 @@ and key risk indicators for non-technical stakeholders.
 
 ## 👥 Team
 
-| Name | Role |
-|------|------|
+| Name |
+|------|
 | Linda Bsharat |
 | Ahmad Hlawa |
 | Naser abdalsalam|
