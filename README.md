@@ -1,5 +1,5 @@
 # 📡 Telco Customer Churn Prediction
-
+> Identifying At-Risk Telecom Customers Using Machine Learning
 > Predicting which telecom customers are likely to leave — before they do.
 
 ![Python](https://img.shields.io/badge/Python-3.10-blue?style=flat-square&logo=python)
