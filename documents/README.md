@@ -7,7 +7,7 @@ This folder contains project documentation and reports.
 | File | Description |
 |------|-------------|
 | `Telco_Churn_Report.ipynb` | Full project report covering data analysis, methodology, and findings |
-| `presentation.pdf` | Final presentation slides for the capstone project |
+| `presentation.pdf` | Final presentation slides for the capstone project |https://canva.link/telcocustomer|
 
 ## Contents
 
